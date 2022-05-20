@@ -8,6 +8,8 @@ namespace WF_Calc.Modules {
 
         #region 构造函数
 
+        public CategoryEntity() { }
+
         public CategoryEntity(DataRow dr) {
             this.Id = Convert.ToInt32(dr["Id"]);
             this.CategoryNum = Convert.ToInt32(dr["CategoryNum"]);

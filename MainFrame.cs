@@ -3,6 +3,7 @@ using CefSharp.WinForms;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -28,7 +29,13 @@ namespace WF_Calc {
             InitializeComponent();
             this.MainPanel.Controls.Add(this.browser);
             InitializeThemes();
-            this.lblTitle.Text = property.GetValue("SystemTitle").ToString();
+            this.lblTitle.Text = ConfigurationManager.AppSettings["SystemName"].ToString();
+            this.cbxTheme.SelectedIndex = 0;
+            int dev = Convert.ToInt32(ConfigurationManager.AppSettings["dev"].ToString());
+            if (dev > 0) {
+                this.btn_view_log.Visible = false;
+                this.btn_webtest.Visible = false;
+            }
         }
 
         public ChromiumWebBrowser browser;
@@ -49,10 +56,11 @@ namespace WF_Calc {
         }
 
         private void btnEdit_Click(object sender, EventArgs e) {
+            CategoryForm cf = new CategoryForm();
+            cf.ShowDialog();
         }
 
         private void btnDel_Click(object sender, EventArgs e) {
-            this.browser.ShowDevTools();
         }
 
         private void MainFrame_KeyDown(object sender, KeyEventArgs e) {
@@ -157,18 +165,26 @@ namespace WF_Calc {
         }
 
         private void MainFrame_Shown(object sender, EventArgs e) {
+            //将组件，添加到页面上来
+            List<Themes> themes = new Themes().Init();
+            foreach (Themes theme in themes) {
+                if (theme.Value == property.GetValue("Theme").ToString()) {
+                    cbxTheme.SelectedIndex = themes.IndexOf(theme);
+                }
+            }
             this.browser.FrameLoadEnd += new EventHandler<FrameLoadEndEventArgs>(FrameEndFu);
         }
 
         private void FrameEndFu(object sender, EventArgs e) {
-            //将组件，添加到页面上来
-            List<Themes> themes = new Themes().Init();
-            foreach (Themes theme in themes) {
-                if (theme.Value == property.GetValue("Theme").ToString())
-                    cbxTheme.SelectedIndex = themes.IndexOf(theme);
-            }
             this.cbxTheme.SelectedIndexChanged += theme_Change;
-            this.browser.GetBrowser().MainFrame.ExecuteJavaScriptAsync(String.Format("changeThemes('{0}')", property.GetValue("Theme").ToString()));
+            this.browser.GetBrowser().MainFrame.ExecuteJavaScriptAsync(String.Format("changeThemes('{0}')", property.GetValue("Theme").ToString()));            
+        }
+
+        private void btn_webtest_Click(object sender, EventArgs e) {
+            this.browser.ShowDevTools();
+        }
+
+        private void btn_view_log_Click(object sender, EventArgs e) {
         }
     }
 }

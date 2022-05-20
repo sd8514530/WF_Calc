@@ -50,8 +50,7 @@
             CommonJs.alert("测试111111", "");//调用后代代码，方法名必须为小写开头，不管后台首字符大小写
         }
 
-        var changeThemes = function (themes) {
-            console.log(themes)
+        var changeThemes = function (themes) {            
             themes = themes ? themes : 'default';
             $('#themes').attr('href', 'Content/themes/' + themes + '/easyui.css');
         }

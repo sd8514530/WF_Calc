@@ -36,6 +36,8 @@ namespace WF_Calc {
             this.btn_delete_item = new System.Windows.Forms.Button();
             this.btn_edit_item = new System.Windows.Forms.Button();
             this.btn_add_item = new System.Windows.Forms.Button();
+            this.btn_view_log = new System.Windows.Forms.Button();
+            this.btn_webtest = new System.Windows.Forms.Button();
             this.gbxBtn.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +58,6 @@ namespace WF_Calc {
             // 
             this.gbxBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxBtn.Controls.Add(this.btnDel);
-            this.gbxBtn.Controls.Add(this.btnEdit);
             this.gbxBtn.Controls.Add(this.btnAdd);
             this.gbxBtn.Location = new System.Drawing.Point(667, 54);
             this.gbxBtn.Name = "gbxBtn";
@@ -77,11 +78,11 @@ namespace WF_Calc {
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(101, 20);
+            this.btnEdit.Location = new System.Drawing.Point(263, 20);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "编辑分类";
+            this.btnEdit.Text = "分类管理";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -128,11 +129,12 @@ namespace WF_Calc {
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btn_delete_item);
+            this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.btn_edit_item);
             this.groupBox1.Controls.Add(this.btn_add_item);
             this.groupBox1.Location = new System.Drawing.Point(12, 54);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(280, 56);
+            this.groupBox1.Size = new System.Drawing.Size(356, 56);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "数据操作";
@@ -164,12 +166,40 @@ namespace WF_Calc {
             this.btn_add_item.Text = "新增项目";
             this.btn_add_item.UseVisualStyleBackColor = true;
             // 
+            // btn_view_log
+            // 
+            this.btn_view_log.BackColor = System.Drawing.Color.Teal;
+            this.btn_view_log.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_view_log.ForeColor = System.Drawing.Color.White;
+            this.btn_view_log.Location = new System.Drawing.Point(32, 13);
+            this.btn_view_log.Name = "btn_view_log";
+            this.btn_view_log.Size = new System.Drawing.Size(75, 23);
+            this.btn_view_log.TabIndex = 6;
+            this.btn_view_log.Text = "查看日志";
+            this.btn_view_log.UseVisualStyleBackColor = false;
+            this.btn_view_log.Click += new System.EventHandler(this.btn_view_log_Click);
+            // 
+            // btn_webtest
+            // 
+            this.btn_webtest.BackColor = System.Drawing.Color.Teal;
+            this.btn_webtest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_webtest.ForeColor = System.Drawing.Color.White;
+            this.btn_webtest.Location = new System.Drawing.Point(113, 13);
+            this.btn_webtest.Name = "btn_webtest";
+            this.btn_webtest.Size = new System.Drawing.Size(75, 23);
+            this.btn_webtest.TabIndex = 7;
+            this.btn_webtest.Text = "Web调试";
+            this.btn_webtest.UseVisualStyleBackColor = false;
+            this.btn_webtest.Click += new System.EventHandler(this.btn_webtest_Click);
+            // 
             // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(962, 580);
+            this.Controls.Add(this.btn_webtest);
+            this.Controls.Add(this.btn_view_log);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblTheme);
             this.Controls.Add(this.cbxTheme);
@@ -177,6 +207,7 @@ namespace WF_Calc {
             this.Controls.Add(this.gbxBtn);
             this.Controls.Add(this.lblTitle);
             this.Name = "MainFrame";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "主程序";
             this.Shown += new System.EventHandler(this.MainFrame_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainFrame_KeyDown);
@@ -201,6 +232,8 @@ namespace WF_Calc {
         private System.Windows.Forms.Button btn_delete_item;
         private System.Windows.Forms.Button btn_edit_item;
         private System.Windows.Forms.Button btn_add_item;
+        private System.Windows.Forms.Button btn_view_log;
+        private System.Windows.Forms.Button btn_webtest;
     }
 }
 

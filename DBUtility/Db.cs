@@ -1,13 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Data.SqlClient;
-using System.Collections;
 using System.Data;
-using Grove;
 using System.Configuration;
-namespace HZ.MBSM.DBUtility
-{
+namespace WF_Calc.DBUtility {
     public class Db
     {
         private System.Data.IDataReader Idr;
@@ -33,9 +28,25 @@ namespace HZ.MBSM.DBUtility
             //    throw new System.Exception("数据库连接配置文件 " + ConnectionConfigFile + " 不存在");
             //}
             //this.m_ConnectionString = "Server=10.0.0.4;uid=sa;pwd=;database=hubei";
-            this.m_ConnectionString = ConfigurationManager.ConnectionStrings[0].ToString(); //"Server=10.0.0.218;uid=sa;pwd=;database=hubei";
+            this.m_ConnectionString = ConfigurationManager.ConnectionStrings[ConfigurationManager.AppSettings["dbType"]].ToString(); //"Server=10.0.0.218;uid=sa;pwd=;database=hubei";
             //this.m_ConnectionString = "Server=jhl;uid=sa;pwd=sa;database=hubei";
-            this.m_ConnectionType = ConnectType.Sql;
+            /* Sql,
+            OleDb,
+            Odbc*/
+            switch (ConfigurationManager.AppSettings["dbType"]) {
+                case "Sql":
+                    this.m_ConnectionType = ConnectType.Sql;
+                    break;
+                case "OleDb":
+                    this.m_ConnectionType = ConnectType.OleDb;
+                    break;
+                case "Odbc":
+                    this.m_ConnectionType = ConnectType.Odbc;
+                    break;
+                default:
+                    this.m_ConnectionType = ConnectType.Sql;
+                    break;
+            }            
             OpenDb();
         }
 
@@ -44,8 +55,20 @@ namespace HZ.MBSM.DBUtility
             //this.m_ConnectionString = "Server=10.0.0.4;uid=sa;pwd=;database=hubei";
             this.m_ConnectionString = ConfigurationManager.ConnectionStrings[0].ToString();// "Server=10.0.0.218;uid=sa;pwd=;database=hubei";
             //this.m_ConnectionString = "Server=jhl;uid=sa;pwd=sa;database=hubei";
-            this.m_ConnectionType = ConnectType.Sql;
-
+            switch (ConfigurationManager.AppSettings["dbType"]) {
+                case "Sql":
+                    this.m_ConnectionType = ConnectType.Sql;
+                    break;
+                case "OleDb":
+                    this.m_ConnectionType = ConnectType.OleDb;
+                    break;
+                case "Odbc":
+                    this.m_ConnectionType = ConnectType.Odbc;
+                    break;
+                default:
+                    this.m_ConnectionType = ConnectType.Sql;
+                    break;
+            }
             if (OpenDbFlag)
                 OpenDb();
         }
@@ -54,7 +77,8 @@ namespace HZ.MBSM.DBUtility
         {
             get
             {
-                return System.Environment.SystemDirectory + "\\JobAnalysis.DB";
+                return ConfigurationManager.ConnectionStrings[0].ToString();
+                //return System.Environment.SystemDirectory + "\\JobAnalysis.DB";
                 //return this.m_ConnectionString;
             }
         }

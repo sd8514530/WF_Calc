@@ -20,4 +20,7 @@
     <Import Project="$(NuGetPackageRoot)cefsharp.common\57.0.0\build\CefSharp.Common.props" Condition="Exists('$(NuGetPackageRoot)cefsharp.common\57.0.0\build\CefSharp.Common.props')" />
     <Import Project="$(NuGetPackageRoot)cefsharp.winforms\57.0.0\build\CefSharp.WinForms.props" Condition="Exists('$(NuGetPackageRoot)cefsharp.winforms\57.0.0\build\CefSharp.WinForms.props')" />
   </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgNLog_Config Condition=" '$(PkgNLog_Config)' == '' ">C:\Users\Administrator\.nuget\packages\nlog.config\4.5.6</PkgNLog_Config>
+  </PropertyGroup>
 </Project>
