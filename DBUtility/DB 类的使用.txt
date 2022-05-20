@@ -1,0 +1,139 @@
+DbPage 类的使用：
+
+        Db db = new Db();
+        DbPage dbPage = new DbPage(db);
+
+        dbPage.Table = "Area";                                              //表名，可以多个表关联
+        dbPage.Key = "AreaId";                                              //该查询可以唯一表示记录的字段，该属性必须设置且只能有一个唯一标识字段
+        dbPage.Where = "AreaId>0 And AreaId<700000";                   //查询条件，可以不设置。
+        dbPage.SelectField = "AreaId,AreaName";                             //可以不设，默认为“*”
+        dbPage.OrderBy = "AreaName";                                        //排序字段，可以不输入。不输入时以 Key 作为排序字段
+        dbPage.OrderByIsDesc = SysFun.ToBool(Request.QueryString["DESC"]);  //是否倒序排序，默认是否
+
+        dbPage.PageIndex = SysFun.ToInt(Request.QueryString["PG"]);         //设置需要查询第几页
+        dbPage.PageSize = SysFun.ToInt(Request.QueryString["PS"]);          //设置每页显示多少条记录
+
+        System.Data.IDataReader dr = dbPage.ExecuteReader();
+        while (dr.Read())
+        {
+            Response.Write(dr["AreaId"] + " " + dr["AreaName"] + "<br>");
+        }
+        dr.Close();
+
+        Response.Write("总页数：" + dbPage.PageCount.ToString() + "<br>");
+        Response.Write("当前页：" + dbPage.PageIndex.ToString() + "<br>");
+        Response.Write("页大小：" + dbPage.PageSize.ToString() + "<br>");
+        Response.Write("总记录：" + dbPage.RowCount.ToString() + "<br>");
+
+        db.Close();
+
+关于 Db 类的使用说明
+
+    Db 类是一个通用的用于连接各类数据库的类。
+
+使用 DataReader 取一行数据
+    string strSql;
+    Db db = new Db();
+    System.Data.IDataReader dr;
+
+    strSql = "Select * From TABLENAME";
+    dr = db.DataReader(strSql);
+    if (dr.Read())
+    {
+        string value = dr["FIELDNAME"];
+    }
+    else
+    {
+    }
+    dr.Close();
+
+    db.Close();
+
+
+使用 DataReader 取多行数据
+    string strSql;
+    Db db = new Db();
+    System.Data.IDataReader dr;
+
+    strSql = "Select * From TABLENAME";
+    dr = db.DataReader(strSql);
+    while (dr.Read())
+    {
+        string value = dr["FIELDNAME"];
+    }
+    dr.Close();
+
+    db.Close();
+
+
+使用 DataReader 取多行数据，并判断是否有数据
+    string strSql;
+    Db db = new Db();
+    System.Data.IDataReader dr;
+
+    strSql = "Select * From TABLENAME";
+    dr = db.DataReader(strSql);
+    if (dr.Read())
+    {
+        do
+        {
+            string value = dr["FIELDNAME"];
+        } while (dr.Read());
+    }
+    else
+    {
+    }
+    dr.Close();
+
+    db.Close();
+
+
+插入数据
+    string strSql;
+    Db db = new Db();
+
+    strSql = "value1,value2";
+    strSql = "Insert Into TABLENAME (FIELDNAME1,FIELDNAME2) Values (" + strSql + ")";
+    db.Command(strSql);
+
+    db.Close();
+
+
+更新数据
+    string strSql;
+    Db db = new Db();
+
+    strSql = "UpDate TABLENAME Set FIELDNAME=value";
+    db.Command(strSql);
+
+    db.Close();
+
+删除数据
+    string strSql;
+    Db db = new Db();
+
+    strSql = "Delete From TABLENAME Where FIELDNAME=value";
+    db.Command(strSql);
+
+    db.Close();
+
+将图片、文件存入数据库
+            string strSql;
+            Db db = new Db();
+
+            strSql = "Insert Into TABLENAME (FIELDNAME,FIELDIMAGE) Values (@FIELDNAME,@FIELDIMAGE)";
+            System.Data.IDbCommand cmdDb = db.DbCommand(strSql);
+
+            System.Data.IDbDataParameter parFIELDNAME = db.DbDataParameter();
+            parFIELDNAME.ParameterName = "@FIELDNAME";
+            parFIELDNAME.Value = "权限名称";
+            cmdDb.Parameters.Add(parFIELDNAME);
+
+            System.Data.IDbDataParameter parFIELDIMAGE = db.DbDataParameter();
+            parFIELDIMAGE.ParameterName = "@FIELDIMAGE";
+            parFIELDIMAGE.Value = Db.ImageToByte(img);
+            cmdDb.Parameters.Add(parFIELDIMAGE);
+
+            cmdDb.ExecuteNonQuery();
+
+            db.Close();

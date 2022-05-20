@@ -1,0 +1,11 @@
+D:\WF_Calc\obj\Debug\WF_Calc.csproj.AssemblyReference.cache
+D:\WF_Calc\obj\Debug\WF_Calc.MainFrame.resources
+D:\WF_Calc\obj\Debug\WF_Calc.Properties.Resources.resources
+D:\WF_Calc\obj\Debug\WF_Calc.csproj.GenerateResource.cache
+D:\WF_Calc\obj\Debug\WF_Calc.csproj.CoreCompileInputs.cache
+D:\WF_Calc\bin\Debug\WF_Calc.exe
+D:\WF_Calc\bin\Debug\WF_Calc.pdb
+D:\WF_Calc\bin\Debug\Grove.dll
+D:\WF_Calc\obj\Debug\WF_Calc.csproj.CopyComplete
+D:\WF_Calc\obj\Debug\WF_Calc.exe
+D:\WF_Calc\obj\Debug\WF_Calc.pdb
