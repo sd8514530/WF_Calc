@@ -60,12 +60,17 @@ namespace WF_Calc {
         }
 
         private void btn_delete_Click(object sender, EventArgs e) {
+            int a = this.lv_cate.CurrentRow.Index;
+            var row = lv_cate.Rows[a];
+            this.id = Convert.ToInt32(row.Cells["Id"].Value);
             if (this.id != null) {
-                if (categoryService.DelCategory(Convert.ToInt32(this.id))) {
-                    MessageBox.Show("删除分类成功！", "温馨提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    InitCategoryData();
-                } else {
-                    MessageBox.Show("删除分类失败！", "温馨提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (MessageBox.Show("是否确认删除数据？", "温馨提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK) {
+                    if (categoryService.DelCategory(Convert.ToInt32(this.id))) {
+                        MessageBox.Show("删除分类成功！", "温馨提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        InitCategoryData();
+                    } else {
+                        MessageBox.Show("删除分类失败！", "温馨提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             } else {
                 MessageBox.Show("请选择需要删除的数据！", "温馨提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
