@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="Tb">
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'" onclick="addRow()">测试</a>
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'" onclick="window.location.reload()">刷新</a>
+        <input id="txtAccount" type="text" />
+    </div>
+    <table id="MainGrid">
+        <thead>
+            <tr>
+                <th data-options="field:'ItemNum',width:60,align:'center'" rowspan="2">序号</th>
+                <th data-options="field:'ItemName',width:120,halign:'center'" rowspan="2">项目名称</th>
+                <th data-options="field:'ItemContent',width:260,halign:'center'" rowspan="2">主材及辅材 规格 型号 品牌 等级</th>
+                <th data-options="field:'Unit',width:80,halign:'center'" rowspan="2">单位</th>
+                <th data-options="field:'Quantities',width:100,halign:'center'" rowspan="2">工程量</th>
+                <th data-options="" colspan="3">基价金额</th>
+                <th data-options="field:'Advocate_UP',width:80,halign:'center'" rowspan="2">总价</th>
+            </tr>
+            <tr>
+                <th data-options="field:'Artificial_UP',width:80,halign:'center'">人工单价</th>
+                <th data-options="field:'Complementary_UP',width:80,halign:'center'">辅材单价</th>
+                <th data-options="field:'Advocate_UP',width:80,halign:'center'">主材单价</th>
+            </tr>
+        </thead>
+    </table>
+    <link rel="stylesheet" type="text/css" id="themes" href="Content/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="Content/themes/icon.css" />
+    <script type="text/javascript" src="Content/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="Content/js/jquery.easyui.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            LoadGrid();
+        });
+
+        function LoadGrid() {
+            $('#MainGrid').treegrid({
+                fit: true,
+                title: '项目登记表',
+                toolbar: '#Tb'
+            });
+        }
+
+        function addRow() {
+            console.log("测试111111");
+            CommonJs.alert("测试111111", "");//调用后代代码，方法名必须为小写开头，不管后台首字符大小写
+        }
+
+        var changeThemes = function (themes) {
+            console.log(themes)
+            themes = themes ? themes : 'default';
+            $('#themes').attr('href', 'Content/themes/' + themes + '/easyui.css');
+        }
+    </script>
+</body>
+</html>

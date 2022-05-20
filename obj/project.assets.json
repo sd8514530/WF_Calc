@@ -1,0 +1,494 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.6": {
+      "cef.redist.x64/3.2987.1601": {
+        "type": "package",
+        "build": {
+          "build/cef.redist.x64.targets": {}
+        }
+      },
+      "cef.redist.x86/3.2987.1601": {
+        "type": "package",
+        "build": {
+          "build/cef.redist.x86.targets": {}
+        }
+      },
+      "CefSharp.Common/57.0.0": {
+        "type": "package",
+        "dependencies": {
+          "cef.redist.x64": "[3.2987.1601]",
+          "cef.redist.x86": "[3.2987.1601]"
+        },
+        "build": {
+          "build/CefSharp.Common.props": {},
+          "build/CefSharp.Common.targets": {}
+        }
+      },
+      "CefSharp.WinForms/57.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CefSharp.Common": "[57.0.0]"
+        },
+        "build": {
+          "build/CefSharp.WinForms.props": {},
+          "build/CefSharp.WinForms.targets": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6/win": {
+      "cef.redist.x64/3.2987.1601": {
+        "type": "package",
+        "build": {
+          "build/cef.redist.x64.targets": {}
+        }
+      },
+      "cef.redist.x86/3.2987.1601": {
+        "type": "package",
+        "build": {
+          "build/cef.redist.x86.targets": {}
+        }
+      },
+      "CefSharp.Common/57.0.0": {
+        "type": "package",
+        "dependencies": {
+          "cef.redist.x64": "[3.2987.1601]",
+          "cef.redist.x86": "[3.2987.1601]"
+        },
+        "build": {
+          "build/CefSharp.Common.props": {},
+          "build/CefSharp.Common.targets": {}
+        }
+      },
+      "CefSharp.WinForms/57.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CefSharp.Common": "[57.0.0]"
+        },
+        "build": {
+          "build/CefSharp.WinForms.props": {},
+          "build/CefSharp.WinForms.targets": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6/win-x64": {
+      "cef.redist.x64/3.2987.1601": {
+        "type": "package",
+        "build": {
+          "build/cef.redist.x64.targets": {}
+        }
+      },
+      "cef.redist.x86/3.2987.1601": {
+        "type": "package",
+        "build": {
+          "build/cef.redist.x86.targets": {}
+        }
+      },
+      "CefSharp.Common/57.0.0": {
+        "type": "package",
+        "dependencies": {
+          "cef.redist.x64": "[3.2987.1601]",
+          "cef.redist.x86": "[3.2987.1601]"
+        },
+        "build": {
+          "build/CefSharp.Common.props": {},
+          "build/CefSharp.Common.targets": {}
+        }
+      },
+      "CefSharp.WinForms/57.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CefSharp.Common": "[57.0.0]"
+        },
+        "build": {
+          "build/CefSharp.WinForms.props": {},
+          "build/CefSharp.WinForms.targets": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6/win-x86": {
+      "cef.redist.x64/3.2987.1601": {
+        "type": "package",
+        "build": {
+          "build/cef.redist.x64.targets": {}
+        }
+      },
+      "cef.redist.x86/3.2987.1601": {
+        "type": "package",
+        "build": {
+          "build/cef.redist.x86.targets": {}
+        }
+      },
+      "CefSharp.Common/57.0.0": {
+        "type": "package",
+        "dependencies": {
+          "cef.redist.x64": "[3.2987.1601]",
+          "cef.redist.x86": "[3.2987.1601]"
+        },
+        "build": {
+          "build/CefSharp.Common.props": {},
+          "build/CefSharp.Common.targets": {}
+        }
+      },
+      "CefSharp.WinForms/57.0.0": {
+        "type": "package",
+        "dependencies": {
+          "CefSharp.Common": "[57.0.0]"
+        },
+        "build": {
+          "build/CefSharp.WinForms.props": {},
+          "build/CefSharp.WinForms.targets": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "cef.redist.x64/3.2987.1601": {
+      "sha512": "ON0zHgrtnNQ7uKNtPNEXp2gix7fMN9gaNk5iJ0d/WgqEzq51cAOvV0UpfHsFy5G7PDJELrASCqQVKs2nY48IXA==",
+      "type": "package",
+      "path": "cef.redist.x64/3.2987.1601",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CEF/cef.pak",
+        "CEF/cef_100_percent.pak",
+        "CEF/cef_200_percent.pak",
+        "CEF/cef_extensions.pak",
+        "CEF/devtools_resources.pak",
+        "CEF/icudtl.dat",
+        "CEF/locales/am.pak",
+        "CEF/locales/ar.pak",
+        "CEF/locales/bg.pak",
+        "CEF/locales/bn.pak",
+        "CEF/locales/ca.pak",
+        "CEF/locales/cs.pak",
+        "CEF/locales/da.pak",
+        "CEF/locales/de.pak",
+        "CEF/locales/el.pak",
+        "CEF/locales/en-GB.pak",
+        "CEF/locales/en-US.pak",
+        "CEF/locales/es-419.pak",
+        "CEF/locales/es.pak",
+        "CEF/locales/et.pak",
+        "CEF/locales/fa.pak",
+        "CEF/locales/fi.pak",
+        "CEF/locales/fil.pak",
+        "CEF/locales/fr.pak",
+        "CEF/locales/gu.pak",
+        "CEF/locales/he.pak",
+        "CEF/locales/hi.pak",
+        "CEF/locales/hr.pak",
+        "CEF/locales/hu.pak",
+        "CEF/locales/id.pak",
+        "CEF/locales/it.pak",
+        "CEF/locales/ja.pak",
+        "CEF/locales/kn.pak",
+        "CEF/locales/ko.pak",
+        "CEF/locales/lt.pak",
+        "CEF/locales/lv.pak",
+        "CEF/locales/ml.pak",
+        "CEF/locales/mr.pak",
+        "CEF/locales/ms.pak",
+        "CEF/locales/nb.pak",
+        "CEF/locales/nl.pak",
+        "CEF/locales/pl.pak",
+        "CEF/locales/pt-BR.pak",
+        "CEF/locales/pt-PT.pak",
+        "CEF/locales/ro.pak",
+        "CEF/locales/ru.pak",
+        "CEF/locales/sk.pak",
+        "CEF/locales/sl.pak",
+        "CEF/locales/sr.pak",
+        "CEF/locales/sv.pak",
+        "CEF/locales/sw.pak",
+        "CEF/locales/ta.pak",
+        "CEF/locales/te.pak",
+        "CEF/locales/th.pak",
+        "CEF/locales/tr.pak",
+        "CEF/locales/uk.pak",
+        "CEF/locales/vi.pak",
+        "CEF/locales/zh-CN.pak",
+        "CEF/locales/zh-TW.pak",
+        "CEF/x64/chrome_elf.dll",
+        "CEF/x64/d3dcompiler_47.dll",
+        "CEF/x64/libEGL.dll",
+        "CEF/x64/libGLESv2.dll",
+        "CEF/x64/libcef.dll",
+        "CEF/x64/natives_blob.bin",
+        "CEF/x64/snapshot_blob.bin",
+        "CEF/x64/widevinecdmadapter.dll",
+        "build/cef.redist.x64.targets",
+        "cef.redist.x64.3.2987.1601.nupkg.sha512",
+        "cef.redist.x64.nuspec"
+      ]
+    },
+    "cef.redist.x86/3.2987.1601": {
+      "sha512": "XVMzpc+8bjtoQqgNfwMN0Ch2H94Hnbzho0HIvyOU1wJLMVKG+cpIqI1EXMb4m9uTAgucH5mmDG4TcjVm5T0lbg==",
+      "type": "package",
+      "path": "cef.redist.x86/3.2987.1601",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CEF/cef.pak",
+        "CEF/cef_100_percent.pak",
+        "CEF/cef_200_percent.pak",
+        "CEF/cef_extensions.pak",
+        "CEF/devtools_resources.pak",
+        "CEF/icudtl.dat",
+        "CEF/locales/am.pak",
+        "CEF/locales/ar.pak",
+        "CEF/locales/bg.pak",
+        "CEF/locales/bn.pak",
+        "CEF/locales/ca.pak",
+        "CEF/locales/cs.pak",
+        "CEF/locales/da.pak",
+        "CEF/locales/de.pak",
+        "CEF/locales/el.pak",
+        "CEF/locales/en-GB.pak",
+        "CEF/locales/en-US.pak",
+        "CEF/locales/es-419.pak",
+        "CEF/locales/es.pak",
+        "CEF/locales/et.pak",
+        "CEF/locales/fa.pak",
+        "CEF/locales/fi.pak",
+        "CEF/locales/fil.pak",
+        "CEF/locales/fr.pak",
+        "CEF/locales/gu.pak",
+        "CEF/locales/he.pak",
+        "CEF/locales/hi.pak",
+        "CEF/locales/hr.pak",
+        "CEF/locales/hu.pak",
+        "CEF/locales/id.pak",
+        "CEF/locales/it.pak",
+        "CEF/locales/ja.pak",
+        "CEF/locales/kn.pak",
+        "CEF/locales/ko.pak",
+        "CEF/locales/lt.pak",
+        "CEF/locales/lv.pak",
+        "CEF/locales/ml.pak",
+        "CEF/locales/mr.pak",
+        "CEF/locales/ms.pak",
+        "CEF/locales/nb.pak",
+        "CEF/locales/nl.pak",
+        "CEF/locales/pl.pak",
+        "CEF/locales/pt-BR.pak",
+        "CEF/locales/pt-PT.pak",
+        "CEF/locales/ro.pak",
+        "CEF/locales/ru.pak",
+        "CEF/locales/sk.pak",
+        "CEF/locales/sl.pak",
+        "CEF/locales/sr.pak",
+        "CEF/locales/sv.pak",
+        "CEF/locales/sw.pak",
+        "CEF/locales/ta.pak",
+        "CEF/locales/te.pak",
+        "CEF/locales/th.pak",
+        "CEF/locales/tr.pak",
+        "CEF/locales/uk.pak",
+        "CEF/locales/vi.pak",
+        "CEF/locales/zh-CN.pak",
+        "CEF/locales/zh-TW.pak",
+        "CEF/x86/chrome_elf.dll",
+        "CEF/x86/d3dcompiler_47.dll",
+        "CEF/x86/libEGL.dll",
+        "CEF/x86/libGLESv2.dll",
+        "CEF/x86/libcef.dll",
+        "CEF/x86/natives_blob.bin",
+        "CEF/x86/snapshot_blob.bin",
+        "CEF/x86/widevinecdmadapter.dll",
+        "build/cef.redist.x86.targets",
+        "cef.redist.x86.3.2987.1601.nupkg.sha512",
+        "cef.redist.x86.nuspec"
+      ]
+    },
+    "CefSharp.Common/57.0.0": {
+      "sha512": "Pk3ll8493uE1JX0HFoT9wM7G3y6v3ZyLYb/a18HaiM/Pm3xjLVdscy2ezAGssKtrdoFCpiMoTqKykEm/Q3HwoA==",
+      "type": "package",
+      "path": "cefsharp.common/57.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CefSharp/x64/CefSharp.BrowserSubprocess.Core.dll",
+        "CefSharp/x64/CefSharp.BrowserSubprocess.Core.pdb",
+        "CefSharp/x64/CefSharp.BrowserSubprocess.exe",
+        "CefSharp/x64/CefSharp.BrowserSubprocess.pdb",
+        "CefSharp/x64/CefSharp.Core.dll",
+        "CefSharp/x64/CefSharp.Core.pdb",
+        "CefSharp/x64/CefSharp.Core.xml",
+        "CefSharp/x64/CefSharp.XML",
+        "CefSharp/x64/CefSharp.dll",
+        "CefSharp/x64/CefSharp.pdb",
+        "CefSharp/x86/CefSharp.BrowserSubprocess.Core.dll",
+        "CefSharp/x86/CefSharp.BrowserSubprocess.Core.pdb",
+        "CefSharp/x86/CefSharp.BrowserSubprocess.exe",
+        "CefSharp/x86/CefSharp.BrowserSubprocess.pdb",
+        "CefSharp/x86/CefSharp.Core.dll",
+        "CefSharp/x86/CefSharp.Core.pdb",
+        "CefSharp/x86/CefSharp.Core.xml",
+        "CefSharp/x86/CefSharp.XML",
+        "CefSharp/x86/CefSharp.dll",
+        "CefSharp/x86/CefSharp.pdb",
+        "build/CefSharp.Common.props",
+        "build/CefSharp.Common.targets",
+        "cefsharp.common.57.0.0.nupkg.sha512",
+        "cefsharp.common.nuspec"
+      ]
+    },
+    "CefSharp.WinForms/57.0.0": {
+      "sha512": "slebfMUsClWh4bs47Dshk4XLvsqVFwQflbjj+t7G2wDd9/79rlxlg2FL9+avCQ68OWyR270AULV1jjfSJFnxfw==",
+      "type": "package",
+      "path": "cefsharp.winforms/57.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CefSharp/x64/CefSharp.WinForms.XML",
+        "CefSharp/x64/CefSharp.WinForms.dll",
+        "CefSharp/x64/CefSharp.WinForms.pdb",
+        "CefSharp/x86/CefSharp.WinForms.XML",
+        "CefSharp/x86/CefSharp.WinForms.dll",
+        "CefSharp/x86/CefSharp.WinForms.pdb",
+        "Readme.txt",
+        "build/CefSharp.WinForms.props",
+        "build/CefSharp.WinForms.targets",
+        "cefsharp.winforms.57.0.0.nupkg.sha512",
+        "cefsharp.winforms.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.6": [
+      "CefSharp.Common >= 57.0.0",
+      "CefSharp.WinForms >= 57.0.0",
+      "Newtonsoft.Json >= 13.0.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\GitHub\\WF_Calc\\WF_Calc.csproj",
+      "projectName": "WF_Calc",
+      "projectPath": "D:\\GitHub\\WF_Calc\\WF_Calc.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHub\\WF_Calc\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net46"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "D:\\GitHub\\kh-medical\\packages": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net46": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "net46": {
+        "dependencies": {
+          "CefSharp.Common": {
+            "target": "Package",
+            "version": "[57.0.0, )"
+          },
+          "CefSharp.WinForms": {
+            "target": "Package",
+            "version": "[57.0.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

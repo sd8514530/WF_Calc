@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)cef.redist.x86\3.2987.1601\build\cef.redist.x86.targets" Condition="Exists('$(NuGetPackageRoot)cef.redist.x86\3.2987.1601\build\cef.redist.x86.targets')" />
+    <Import Project="$(NuGetPackageRoot)cef.redist.x64\3.2987.1601\build\cef.redist.x64.targets" Condition="Exists('$(NuGetPackageRoot)cef.redist.x64\3.2987.1601\build\cef.redist.x64.targets')" />
+    <Import Project="$(NuGetPackageRoot)cefsharp.common\57.0.0\build\CefSharp.Common.targets" Condition="Exists('$(NuGetPackageRoot)cefsharp.common\57.0.0\build\CefSharp.Common.targets')" />
+    <Import Project="$(NuGetPackageRoot)cefsharp.winforms\57.0.0\build\CefSharp.WinForms.targets" Condition="Exists('$(NuGetPackageRoot)cefsharp.winforms\57.0.0\build\CefSharp.WinForms.targets')" />
+  </ImportGroup>
+</Project>

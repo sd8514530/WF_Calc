@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "b9ABf10xu3Vhr7jJepZ63GK3IuFCc8qk/R3tPCZh+6C0qc1spY/2A1/0/11+XwUZvhDbHdxYHH1Re5JTvYdM8w==",
+  "success": true,
+  "projectFilePath": "D:\\GitHub\\WF_Calc\\WF_Calc.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\cef.redist.x64\\3.2987.1601\\cef.redist.x64.3.2987.1601.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\cef.redist.x86\\3.2987.1601\\cef.redist.x86.3.2987.1601.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\cefsharp.common\\57.0.0\\cefsharp.common.57.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\cefsharp.winforms\\57.0.0\\cefsharp.winforms.57.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

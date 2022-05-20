@@ -1,0 +1,6 @@
+[0520/104543.458:ERROR:component_installer.cc(349)] Failed to read manifest or verify installation for Widevine Content Decryption Module (C:\Users\Administrator\AppData\Local\CEF\User Data\WidevineCdm\4.10.2391.0).: 系统找不到指定的路径。 (0x3)
+[0520/110421.623:INFO:CONSOLE(1)] "Uncaught TypeError: Cannot set properties of null (setting 'value')", source: about:blank (1)
+[0520/110424.899:INFO:CONSOLE(1)] "Uncaught TypeError: Cannot set properties of null (setting 'value')", source: about:blank (1)
+[0520/110458.224:INFO:CONSOLE(1)] "Uncaught TypeError: Cannot set properties of null (setting 'value')", source: about:blank (1)
+[0520/110637.526:INFO:CONSOLE(1)] "Uncaught TypeError: Cannot set properties of null (setting 'value')", source: about:blank (1)
+[0520/110811.295:INFO:CONSOLE(17)] "Uncaught ReferenceError: bound is not defined", source: file:///D:/GitHub/WF_Calc/WebPages/test.html (17)
