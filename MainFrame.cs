@@ -13,12 +13,12 @@ namespace WF_Calc {
     public partial class MainFrame : Form {
         private string pathName = System.Environment.CurrentDirectory;
         private string propertyPath = "";
-        private JObject currentTheme = null;
+        private JObject property = null;
 
         public MainFrame() {
             pathName = System.IO.Directory.GetParent(pathName).Parent.FullName;
             propertyPath = GetApplicationPath() + "Data/system.json";
-            this.currentTheme = JObject.Parse(GetJsonFile(propertyPath));
+            this.property = JObject.Parse(GetJsonFile(propertyPath));
             //System.IO.Directory.GetParent(pathName).Parent.FullName +
             //创建组件，传递URL：可以是本地，也可以是远程地址
             this.browser = new ChromiumWebBrowser(pathName + "../../WebPages/MainFrame.html") {
@@ -28,6 +28,7 @@ namespace WF_Calc {
             InitializeComponent();
             this.MainPanel.Controls.Add(this.browser);
             InitializeThemes();
+            this.lblTitle.Text = property.GetValue("SystemTitle").ToString();
         }
 
         public ChromiumWebBrowser browser;
@@ -48,7 +49,6 @@ namespace WF_Calc {
         }
 
         private void btnEdit_Click(object sender, EventArgs e) {
-
         }
 
         private void btnDel_Click(object sender, EventArgs e) {
@@ -67,13 +67,13 @@ namespace WF_Calc {
             cbxTheme.DataSource = themes;
             cbxTheme.DisplayMember = "ThemeName";
             cbxTheme.ValueMember = "ThemeName";
-            cbxTheme.Tag = "主题切换";            
+            cbxTheme.Tag = "主题切换";
         }
 
-        private void theme_Change(object sender, EventArgs e) {            
-            this.currentTheme["Theme"] = cbxTheme.SelectedValue.ToString();
+        private void theme_Change(object sender, EventArgs e) {
+            this.property["Theme"] = cbxTheme.SelectedValue.ToString();
             this.browser.GetBrowser().MainFrame.ExecuteJavaScriptAsync(String.Format("changeThemes('{0}')", cbxTheme.SelectedValue));
-            WriteJsonFile(propertyPath, currentTheme.ToString());
+            WriteJsonFile(propertyPath, property.ToString());
         }
 
         /// <summary>
@@ -157,18 +157,18 @@ namespace WF_Calc {
         }
 
         private void MainFrame_Shown(object sender, EventArgs e) {
-            this.browser.FrameLoadEnd += new EventHandler<FrameLoadEndEventArgs>(FrameEndFu);            
+            this.browser.FrameLoadEnd += new EventHandler<FrameLoadEndEventArgs>(FrameEndFu);
         }
 
         private void FrameEndFu(object sender, EventArgs e) {
             //将组件，添加到页面上来
             List<Themes> themes = new Themes().Init();
             foreach (Themes theme in themes) {
-                if (theme.Value == currentTheme.GetValue("Theme").ToString())
+                if (theme.Value == property.GetValue("Theme").ToString())
                     cbxTheme.SelectedIndex = themes.IndexOf(theme);
             }
             this.cbxTheme.SelectedIndexChanged += theme_Change;
-            this.browser.GetBrowser().MainFrame.ExecuteJavaScriptAsync(String.Format("changeThemes('{0}')", currentTheme.GetValue("Theme").ToString()));            
+            this.browser.GetBrowser().MainFrame.ExecuteJavaScriptAsync(String.Format("changeThemes('{0}')", property.GetValue("Theme").ToString()));
         }
     }
 }

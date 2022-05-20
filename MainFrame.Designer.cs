@@ -47,9 +47,10 @@ namespace WF_Calc {
             this.lblTitle.Font = new System.Drawing.Font("微软雅黑", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTitle.Location = new System.Drawing.Point(374, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(212, 42);
+            this.lblTitle.Size = new System.Drawing.Size(146, 42);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "XXX装修计算";
+            this.lblTitle.Text = "系统名称";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gbxBtn
             // 
@@ -116,12 +117,13 @@ namespace WF_Calc {
             // 
             // lblTheme
             // 
+            this.lblTheme.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTheme.AutoSize = true;
             this.lblTheme.Location = new System.Drawing.Point(755, 33);
             this.lblTheme.Name = "lblTheme";
             this.lblTheme.Size = new System.Drawing.Size(65, 12);
             this.lblTheme.TabIndex = 4;
-            this.lblTheme.Text = "主题选择：";
+            this.lblTheme.Text = "主题切换：";
             // 
             // groupBox1
             // 
